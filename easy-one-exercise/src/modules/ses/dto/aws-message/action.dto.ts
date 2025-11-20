@@ -3,7 +3,8 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class ActionDto {
   @ApiProperty({
-    description: 'Type of action executed by the SES notification (e.g., "SNS")',
+    description:
+      'Type of action executed by the SES notification (e.g., "SNS")',
     example: 'SNS',
   })
   @IsString()

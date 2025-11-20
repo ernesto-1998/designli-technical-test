@@ -1,3 +1,4 @@
-import { SesVerdictStatus } from "src/common/enums";
+import { SesVerdictStatus } from 'src/common/enums';
 
-export const isPass = (status: string): boolean => status === SesVerdictStatus.PASS;
+export const isPass = (status: string): boolean =>
+  status === SesVerdictStatus.PASS;

@@ -7,7 +7,8 @@ import { ApiProperty } from '@nestjs/swagger';
 export class SesDto {
   @ApiProperty({
     type: ReceiptDto,
-    description: 'Information about SES processing results, verdicts, and actions',
+    description:
+      'Information about SES processing results, verdicts, and actions',
   })
   @ValidateNested()
   @Type(() => ReceiptDto)
@@ -15,7 +16,8 @@ export class SesDto {
 
   @ApiProperty({
     type: MailDto,
-    description: 'Email metadata including headers, sender, recipients, and timestamps',
+    description:
+      'Email metadata including headers, sender, recipients, and timestamps',
   })
   @ValidateNested()
   @Type(() => MailDto)

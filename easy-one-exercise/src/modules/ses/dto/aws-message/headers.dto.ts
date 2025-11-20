@@ -12,7 +12,7 @@ export class HeadersDto {
   @ApiProperty({
     description: 'Header value',
     example: '<no-reply@amazon.com>',
-  })  
+  })
   @IsString()
   value: string;
 }

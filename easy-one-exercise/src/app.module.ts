@@ -8,7 +8,8 @@ import { GlobalExceptionFilter } from './common/filter';
 @Module({
   imports: [SesModule],
   controllers: [AppController],
-  providers: [AppService,
+  providers: [
+    AppService,
     {
       provide: APP_FILTER,
       useClass: GlobalExceptionFilter,

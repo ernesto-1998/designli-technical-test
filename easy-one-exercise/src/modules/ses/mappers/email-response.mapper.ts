@@ -8,7 +8,6 @@ import {
 } from 'src/common/utils';
 import { isPass } from '../helpers/ses.helpers';
 
-
 @Injectable()
 export class EmailResponseMapper {
   toResponseDto(inputDto: AwsMessageRequestDto): EmailResponseDto {

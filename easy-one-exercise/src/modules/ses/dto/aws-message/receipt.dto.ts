@@ -12,22 +12,21 @@ import { DmarcPolicy } from 'src/common/enums';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class ReceiptDto {
-  @ApiProperty({ description: 'Timestamp when the email was received',
+  @ApiProperty({
+    description: 'Timestamp when the email was received',
     example: '2024-10-01T12:34:56.000Z',
-   })
+  })
   @IsString()
   timestamp: string;
 
-  @ApiProperty({ description: 'Processing time in milliseconds', 
-    example: 123
-  })
+  @ApiProperty({ description: 'Processing time in milliseconds', example: 123 })
   @IsNumber()
   processingTimeMillis: number;
 
   @ApiProperty({
     type: [String],
     description: 'List of email recipients',
-    example: ['recipient@example.com']
+    example: ['recipient@example.com'],
   })
   @IsArray()
   recipients: string[];

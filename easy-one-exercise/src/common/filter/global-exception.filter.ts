@@ -9,7 +9,6 @@ import { Request, Response } from 'express';
 
 @Catch()
 export class GlobalExceptionFilter implements ExceptionFilter {
-
   catch(exception: unknown, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
@@ -20,7 +19,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
     let error = 'Internal Server Error';
 
     if (exception instanceof HttpException) {
-        console.error(exception);
+      console.error(exception);
       status = exception.getStatus();
       const exceptionResponse = exception.getResponse();
 

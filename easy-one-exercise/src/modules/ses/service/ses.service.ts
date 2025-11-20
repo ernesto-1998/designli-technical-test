@@ -5,7 +5,6 @@ import { EmailResponseDto } from '../dto/response';
 
 @Injectable()
 export class SesService {
-
   constructor(private readonly mapper: EmailResponseMapper) {}
 
   process(awsMessageRequestDto: AwsMessageRequestDto): EmailResponseDto {

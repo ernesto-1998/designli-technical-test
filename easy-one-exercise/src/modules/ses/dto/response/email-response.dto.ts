@@ -1,10 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
 
 export class EmailResponseDto {
-  @ApiProperty({ description: 'Whether the email is marked as spam (PASS = true)' })
+  @ApiProperty({
+    description: 'Whether the email is marked as spam (PASS = true)',
+  })
   spam: boolean;
 
-  @ApiProperty({ description: 'Whether the email passed virus checks (PASS = true)' })
+  @ApiProperty({
+    description: 'Whether the email passed virus checks (PASS = true)',
+  })
   virus: boolean;
 
   @ApiProperty({
@@ -13,7 +17,10 @@ export class EmailResponseDto {
   })
   dns: boolean;
 
-  @ApiProperty({ description: 'Email month extracted from mail.timestamp', example: 'October' })
+  @ApiProperty({
+    description: 'Email month extracted from mail.timestamp',
+    example: 'October',
+  })
   mes: string;
 
   @ApiProperty({
@@ -22,7 +29,8 @@ export class EmailResponseDto {
   retrasado: boolean;
 
   @ApiProperty({
-    description: 'Sender username without domain (e.g. john instead of john@gmail.com)',
+    description:
+      'Sender username without domain (e.g. john instead of john@gmail.com)',
     example: 'john',
   })
   emisor: string;
