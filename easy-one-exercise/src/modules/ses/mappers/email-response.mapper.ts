@@ -6,7 +6,8 @@ import {
   extractMonthFromTimestamp,
   extractUsernameFromEmail,
 } from 'src/common/utils';
-import { isPass } from '../helpers';
+import { isPass } from '../helpers/ses.helpers';
+
 
 @Injectable()
 export class EmailResponseMapper {
