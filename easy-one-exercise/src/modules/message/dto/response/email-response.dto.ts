@@ -13,7 +13,7 @@ export class EmailResponseDto {
   })
   dns: boolean;
 
-  @ApiProperty({ description: 'Email month extracted from mail.timestamp' })
+  @ApiProperty({ description: 'Email month extracted from mail.timestamp', example: 'October' })
   mes: string;
 
   @ApiProperty({
@@ -23,12 +23,14 @@ export class EmailResponseDto {
 
   @ApiProperty({
     description: 'Sender username without domain (e.g. john instead of john@gmail.com)',
+    example: 'john',
   })
   emisor: string;
 
   @ApiProperty({
     type: [String],
     description: 'Recipient usernames without domain',
+    example: ['alice', 'bob'],
   })
   receptor: string[];
 }
