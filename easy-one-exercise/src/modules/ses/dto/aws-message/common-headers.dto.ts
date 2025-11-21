@@ -1,4 +1,4 @@
-import { IsString, IsArray } from 'class-validator';
+import { IsString, IsArray, ArrayMinSize, IsEmail } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class CommonHeadersDto {
@@ -15,6 +15,8 @@ export class CommonHeadersDto {
     example: ['sender@example.com'],
   })
   @IsArray()
+  @ArrayMinSize(1)
+  @IsEmail({}, { each: true })
   from: string[];
 
   @ApiProperty({
@@ -30,6 +32,8 @@ export class CommonHeadersDto {
     example: ['recipient@example.com'],
   })
   @IsArray()
+  @ArrayMinSize(1)
+  @IsEmail({}, { each: true })
   to: string[];
 
   @ApiProperty({
@@ -38,6 +42,7 @@ export class CommonHeadersDto {
     example: ['cc@example.com', 'cc2@example.com'],
   })
   @IsArray()
+  @IsEmail({}, { each: true })
   cc: string[];
 
   @ApiProperty({

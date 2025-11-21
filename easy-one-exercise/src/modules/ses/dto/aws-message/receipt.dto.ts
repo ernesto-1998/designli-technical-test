@@ -5,6 +5,8 @@ import {
   IsArray,
   ValidateNested,
   IsEnum,
+  ArrayMinSize,
+  IsEmail,
 } from 'class-validator';
 import { VerdictDto } from './verdict.dto';
 import { ActionDto } from './action.dto';
@@ -29,6 +31,8 @@ export class ReceiptDto {
     example: ['recipient@example.com'],
   })
   @IsArray()
+  @ArrayMinSize(1)
+  @IsEmail({}, { each: true })
   recipients: string[];
 
   @ApiProperty({

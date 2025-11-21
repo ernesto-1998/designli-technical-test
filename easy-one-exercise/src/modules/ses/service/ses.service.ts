@@ -7,7 +7,7 @@ import { EmailResponseDto } from '../dto/response';
 export class SesService {
   constructor(private readonly mapper: EmailResponseMapper) {}
 
-  process(awsMessageRequestDto: AwsMessageRequestDto): EmailResponseDto {
+  validate(awsMessageRequestDto: AwsMessageRequestDto): EmailResponseDto {
     return this.mapper.toResponseDto(awsMessageRequestDto);
   }
 }

@@ -11,9 +11,9 @@ export class SesController {
   @ApiOperation({ summary: 'Process an AWS SES email message' })
   @ApiOkResponse({ type: EmailResponseDto })
   @Post('validate')
-  process(
+  validate(
     @Body() awsMessageRequestDto: AwsMessageRequestDto,
   ): EmailResponseDto {
-    return this.sesService.process(awsMessageRequestDto);
+    return this.sesService.validate(awsMessageRequestDto);
   }
 }

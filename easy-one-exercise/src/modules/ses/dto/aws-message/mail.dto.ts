@@ -1,5 +1,12 @@
 import { Type } from 'class-transformer';
-import { IsString, IsBoolean, IsArray, ValidateNested } from 'class-validator';
+import {
+  IsString,
+  IsBoolean,
+  IsArray,
+  ValidateNested,
+  ArrayMinSize,
+  IsEmail,
+} from 'class-validator';
 import { HeadersDto } from './headers.dto';
 import { CommonHeadersDto } from './common-headers.dto';
 import { ApiProperty } from '@nestjs/swagger';
@@ -16,7 +23,7 @@ export class MailDto {
     description: 'Sender email address',
     example: 'sender@example.com',
   })
-  @IsString()
+  @IsEmail()
   source: string;
 
   @ApiProperty({
@@ -32,6 +39,8 @@ export class MailDto {
     example: ['recipient@example.com'],
   })
   @IsArray()
+  @ArrayMinSize(1)
+  @IsEmail({}, { each: true })
   destination: string[];
 
   @ApiProperty({
