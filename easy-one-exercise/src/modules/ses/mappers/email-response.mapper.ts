@@ -41,7 +41,7 @@ export class EmailResponseMapper {
     };
 
     return plainToInstance(EmailResponseDto, plainObject, {
-      excludeExtraneousValues: false,
+      excludeExtraneousValues: true,
     });
   }
 }
