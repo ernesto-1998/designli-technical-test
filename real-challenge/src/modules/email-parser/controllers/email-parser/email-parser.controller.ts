@@ -10,11 +10,12 @@ export class EmailParserController {
   @Post()
   @ApiOperation({ summary: 'Parse an .eml file from URL or file path' })
   @ApiOkResponse({
-    description: 'JSON successfully extracted from the email',
+    description: 'JSON successfully extracted from the email.eml',
     type: JsonResponseDto,
   })
-  async parseEmail(@Body() parseEmailDto: ParseEmailDto): Promise<JsonResponseDto> {
-    return this.emailParserService.handleParsing(parseEmailDto);
+  async parseEmail(
+    @Body() parseEmailDto: ParseEmailDto,
+  ): Promise<JsonResponseDto> {
+    return this.emailParserService.parseEmail(parseEmailDto);
   }
 }
-

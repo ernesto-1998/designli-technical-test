@@ -24,7 +24,7 @@ async function bootstrap() {
     .addTag('Email Parser')
     .build();
   const documentFactory = () => SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, documentFactory);  
+  SwaggerModule.setup('api', app, documentFactory);
   await app.listen(process.env.PORT ?? 5001);
 }
 bootstrap();

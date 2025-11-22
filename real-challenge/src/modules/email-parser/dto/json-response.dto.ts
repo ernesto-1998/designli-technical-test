@@ -6,7 +6,7 @@ export class JsonResponseDto {
     description: 'The extracted JSON data from the email',
     example: { key: 'value', data: 'example' },
   })
-  data: unknown;
+  data: string | object;
 
   @ApiProperty({
     description: 'Source type where JSON was found',

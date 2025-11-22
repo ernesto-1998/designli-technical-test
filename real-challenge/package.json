@@ -22,9 +22,11 @@
   "dependencies": {
     "@nestjs/axios": "^4.0.1",
     "@nestjs/common": "^11.0.1",
+    "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
     "@nestjs/swagger": "^11.2.3",
+    "@nestjs/throttler": "^6.4.0",
     "axios": "^1.13.2",
     "cheerio": "^1.1.2",
     "class-transformer": "^0.5.1",
