@@ -15,8 +15,16 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should return "Developer Info"', () => {
+      expect(appController.getHello()).toBe(
+        JSON.stringify({
+          message: 'Welcome to Real Challenge Exercise API!',
+          developer: 'Ernesto Magaña',
+          version: '1.0.0',
+          portfolio: 'https://ernestopalacios.netlify.app/',
+          lastProject: 'https://github.com/ernesto-1998/recipe-sharing-nestapp',
+        }),
+      );
     });
   });
 });
